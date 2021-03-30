@@ -60,7 +60,51 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\nvar _templateObject;\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\n\nvar GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral([\"\\n  body {\\n    font-family: 'Noto Sans', sans-serif;\\n\\n  }\\n\\n  h1, h2, h3 {\\n    font-family: 'Open Sans', sans-serif;\\n  }\\n\"])));\n\nvar App = function App() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(GlobalStyle, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h1\", null, \" MV-PIZZA \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"I am a react test\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://demo/./client/components/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n/* harmony import */ var _NavBar_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBar.jsx */ \"./client/components/NavBar.jsx\");\n/* harmony import */ var _Styles_banner_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Styles/banner.js */ \"./client/components/Styles/banner.js\");\nvar _templateObject;\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\n\n\n\nvar GlobalStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral([\"\\n  body {\\n    margin: 0;\\n    font-family: 'Noto Sans', sans-serif;\\n\\n  }\\n\\n  h1, h2, h3 {\\n    font-family: 'Open Sans', sans-serif;\\n  }\\n\"])));\n\nvar App = function App() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(GlobalStyle, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NavBar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Styles_banner_js__WEBPACK_IMPORTED_MODULE_2__.Banner, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"I am a react test\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://demo/./client/components/App.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/NavBar.jsx":
+/*!**************************************!*\
+  !*** ./client/components/NavBar.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n/* harmony import */ var _Styles_colors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Styles/colors.js */ \"./client/components/Styles/colors.js\");\n/* harmony import */ var _Styles_title_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Styles/title.js */ \"./client/components/Styles/title.js\");\nvar _templateObject, _templateObject2;\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\n\n\n\nvar NavBarStlyed = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral([\"\\n  background-color: \", \";\\n  padding: 10px;\\n  position: fixed;\\n  width: 100%;\\n\\n\"])), _Styles_colors_js__WEBPACK_IMPORTED_MODULE_1__.pizzaRed);\nvar Logo = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__.default)(_Styles_title_js__WEBPACK_IMPORTED_MODULE_2__.Title)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([\"\\n  font-size: 20px;\\n  font-weight: bold;\\n  color: white;\\n  text-shadow: 1px 1px 4px darkRed;\\n\"])));\n\nvar NavBar = function NavBar() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(NavBarStlyed, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Logo, null, \"\\uD83C\\uDF4D \\uD83C\\uDF55 MV-PIZZA \\uD83C\\uDF55 \\uD83C\\uDF4D\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);\n\n//# sourceURL=webpack://demo/./client/components/NavBar.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/Styles/banner.js":
+/*!********************************************!*\
+  !*** ./client/components/Styles/banner.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Banner\": () => (/* binding */ Banner)\n/* harmony export */ });\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\nvar _templateObject;\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\nvar Banner = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral([\"\\nheight: 200px;\\nbackground-image: url(\\\"img/pizza.jpg\\\");\\nbackground-position: center;\\nbackground-size: cover;\\n\"])));\n\n//# sourceURL=webpack://demo/./client/components/Styles/banner.js?");
+
+/***/ }),
+
+/***/ "./client/components/Styles/colors.js":
+/*!********************************************!*\
+  !*** ./client/components/Styles/colors.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pizzaRed\": () => (/* binding */ pizzaRed)\n/* harmony export */ });\nvar pizzaRed = \"tomato\";\n\n//# sourceURL=webpack://demo/./client/components/Styles/colors.js?");
+
+/***/ }),
+
+/***/ "./client/components/Styles/title.js":
+/*!*******************************************!*\
+  !*** ./client/components/Styles/title.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Title\": () => (/* binding */ Title)\n/* harmony export */ });\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\nvar _templateObject;\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\nvar Title = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral([\"\\n  font-family: 'Open Sans', sans-serif;\\n\"])));\n\n//# sourceURL=webpack://demo/./client/components/Styles/title.js?");
 
 /***/ }),
 

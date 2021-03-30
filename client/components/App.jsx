@@ -1,8 +1,11 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import NavBar from './NavBar.jsx';
+import { Banner } from './Styles/banner.js'
 
 const GlobalStyle = createGlobalStyle`
   body {
+    margin: 0;
     font-family: 'Noto Sans', sans-serif;
 
   }
@@ -17,7 +20,9 @@ const App = () => {
   return (
     <>
   <GlobalStyle />
-  <h1> MV-PIZZA </h1>
+
+  <NavBar/>
+  <Banner />
   <div>
     I am a react test
    </div>
