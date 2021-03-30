@@ -2,7 +2,7 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import NavBar from './NavBar.jsx';
 import Menu from './Menu.jsx';
-import { Banner } from './Styles/banner.js'
+import { Banner } from './Styles/banner.js';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,22 +14,17 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
   }
-`
+`;
 
-const App = () => {
+const App = () => (
+  <>
+    <GlobalStyle />
 
-  return (
-    <>
-  <GlobalStyle />
-
-  <NavBar/>
-  <Banner />
-  <Menu />
-  <div>
-    I am a react test
-   </div>
+    <NavBar />
+    <Banner />
+    <Menu />
+    <div />
   </>
-  )
-  };
+);
 
 export default App;

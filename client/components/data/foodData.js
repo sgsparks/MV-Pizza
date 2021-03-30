@@ -1,40 +1,52 @@
-const foods = [
-  {
-    name: 'Caesar Salad',
-    img: '/img/caesar-salad.jpeg',
-    type: 'pizza',
-  },
+export const foodItems = [
+
   {
     name: 'Caprese Sandwich',
     img: '/img/caprese-sand.jpeg',
-    type: 'sandwich',
+    section: 'Sandwich',
   },
   {
-    name: 'Olive and Arugula Pizza',
+    name: 'Olive Pizza',
     img: '/img/olive-arugula-pizza.jpeg',
-    type: 'pizzza',
+    section: 'Pizza',
   },
   {
     name: 'Pepperoni Pizza',
     img: '/img/peperoni.jpeg',
-    type: 'pizza',
+    section: 'Pizza',
   },
   {
     name: 'Strawberry Basil Pizza',
     img: '/img/Straw-Basil.jpeg',
-    type: 'pizza',
+    section: 'Pizza',
   },
   {
     name: 'Tomato Basil Pizza',
     img: '/img/tomato-basil-pizza.jpeg',
-    type: 'pizza',
+    section: 'Pizza',
   },
   {
     name: 'Veggie Pizza',
     img: '/img/veggie-pizza.jpeg',
-    type: 'pizza',
+    section: 'Pizza',
+  },
+  {
+    name: 'Breakfast Sandwich',
+    img: '/img/breakfast.jpeg',
+    section: 'Sandwich',
+  },
+  {
+    name: 'Panini',
+    img: '/img/panini.jpeg',
+    section: 'Sandwich',
   },
 
 ];
 
-export default foods;
+export const foods = foodItems.reduce((res, food) => {
+  if (!res[food.section]) {
+    res[food.section] = [];
+  }
+  res[food.section].push(food);
+  return res;
+}, {});
