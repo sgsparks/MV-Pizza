@@ -5,4 +5,5 @@ height: 200px;
 background-image: url("img/pizza.jpg");
 background-position: center;
 background-size: cover;
+
 `

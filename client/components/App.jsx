@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import NavBar from './NavBar.jsx';
+import Menu from './Menu.jsx';
 import { Banner } from './Styles/banner.js'
 
 const GlobalStyle = createGlobalStyle`
@@ -23,6 +24,7 @@ const App = () => {
 
   <NavBar/>
   <Banner />
+  <Menu />
   <div>
     I am a react test
    </div>
