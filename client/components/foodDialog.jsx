@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FoodLabel } from './Styles/foodGrid.js';
+import { Title } from './Styles/title.js'
 
 const Dialog = styled.div`
   width: 500px;
@@ -14,6 +15,30 @@ const Dialog = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const DialogContent = styled.div`
+  overflow: auto;
+  min-height: 100px;
+`
+export const DialogFooter = styled.div`
+  box-shadow: 0px -2px 10px 0px grey;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+`
+
+export const ConfirmButton = styled(Title)`
+  margin: 10px;
+  color: white;
+  height: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  background-color: tomato;
+`
+
 const DialogShadow = styled.div`
   position: fixed;
   height: 100%;
@@ -36,14 +61,13 @@ const DialogBannerName = styled(FoodLabel)`
   top: 100px;
   font-size: 30px;
   padding: 5px 40px;
-`
+`;
 
-
-const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName }) => {
+export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName }) => {
   const close = () => {
     setOpenFoodName();
     setOpenFoodImg();
-  }
+  };
   return (
     openFoodImg ? (
       <>
@@ -52,10 +76,14 @@ const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName
           <DialogBanner img={openFoodImg}>
             <DialogBannerName>{openFoodName}</DialogBannerName>
           </DialogBanner>
+          <DialogContent />
+          <DialogFooter>
+            <ConfirmButton>
+              Add To Order
+            </ConfirmButton>
+          </DialogFooter>
         </Dialog>
       </>
     ) : null
   );
-}
-
-export default FoodDialog;
+};

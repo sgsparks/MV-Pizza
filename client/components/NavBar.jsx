@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { pizzaRed } from './Styles/colors.js';
 import { Title } from './Styles/title.js'
 
 const NavBarStlyed = styled.div`
-  background-color: ${pizzaRed};
+  background-color: tomato;
   padding: 10px;
   position: fixed;
   width: 100%;

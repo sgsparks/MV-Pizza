@@ -4,7 +4,9 @@ import NavBar from './NavBar.jsx';
 import Menu from './Menu.jsx';
 import { Banner } from './Styles/banner.js';
 import { GlobalStyle } from './Styles/globalStyle.js';
-import FoodDialog from './foodDialog.jsx'
+import { FoodDialog } from './foodDialog.jsx';
+import Order from './Order.jsx';
+
 
 const App = () => {
   const [openFoodName, setOpenFoodName] = useState();
@@ -21,6 +23,7 @@ const App = () => {
         setOpenFoodImg={setOpenFoodImg}
       />
       <NavBar />
+      <Order />
       <Banner />
       <div>{openFoodName}</div>
       <Menu
