@@ -63,11 +63,21 @@ const DialogBannerName = styled(FoodLabel)`
   padding: 5px 40px;
 `;
 
-export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName }) => {
+export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName, setOrdersArray, ordersArray }) => {
   const close = () => {
     setOpenFoodName();
     setOpenFoodImg();
   };
+
+  const currentOrder = {
+    name: openFoodName,
+  };
+
+  const addToOrder = () => {
+    setOrdersArray([...ordersArray, currentOrder]);
+    close();
+  };
+
   return (
     openFoodImg ? (
       <>
@@ -78,7 +88,9 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
           </DialogBanner>
           <DialogContent />
           <DialogFooter>
-            <ConfirmButton>
+            <ConfirmButton
+              onClick={() => addToOrder()}
+            >
               Add To Order
             </ConfirmButton>
           </DialogFooter>

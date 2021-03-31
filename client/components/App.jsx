@@ -11,6 +11,8 @@ import Order from './Order.jsx';
 const App = () => {
   const [openFoodName, setOpenFoodName] = useState();
   const [openFoodImg, setOpenFoodImg] = useState();
+  const [ordersArray, setOrdersArray] = useState([]);
+
 
 
   return (
@@ -21,9 +23,14 @@ const App = () => {
         openFoodName={openFoodName}
         setOpenFoodName={setOpenFoodName}
         setOpenFoodImg={setOpenFoodImg}
+        setOrdersArray={setOrdersArray}
+        ordersArray={ordersArray}
       />
       <NavBar />
-      <Order />
+      <Order
+        ordersArray={ordersArray}
+        setOrdersArray={setOrdersArray}
+      />
       <Banner />
       <div>{openFoodName}</div>
       <Menu

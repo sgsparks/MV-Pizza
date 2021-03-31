@@ -20,12 +20,37 @@ const OrderContent = styled(DialogContent)`
   height: 100%;
 `;
 
-const Order = () => {
+const OrderContainer = styled.div`
+  padding: 10px 0px;
+  border-bottom: 1px solid grey;
+`
+const OrderItem = styled.div`
+  padding: 10px 0px;
+`;
+
+const Order = ({ ordersArray }) => {
   return (
     <OrderStyled>
-      <OrderContent>
-        Your Order Is Empty
-      </OrderContent>
+      {ordersArray.length === 0 ? (
+        <OrderContent>
+          Your Order Is Empty
+        </OrderContent>
+      ) : (
+        <OrderContent>
+          {' '}
+          <OrderContainer>
+            Your order:
+          </OrderContainer>
+          {' '}
+          {ordersArray.map((order) => (
+            <OrderContainer>
+              <OrderItem>
+                {order.name}
+              </OrderItem>
+            </OrderContainer>
+          ))}
+        </OrderContent>
+      )}
       <DialogFooter>
         <ConfirmButton>
           Checkout
