@@ -1,7 +1,8 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import styled from 'styled-components';
-import {DialogFooter, DialogContent, ConfirmButton } from './foodDialog.jsx';
+import { FormatPrice } from './data/foodData';
+import { DialogFooter, DialogContent, ConfirmButton, getPrice } from './foodDialog.jsx';
 
 const OrderStyled = styled.div`
   position: fixed;
@@ -31,7 +32,13 @@ const OrderItem = styled.div`
   justify-content: space-between;
 `;
 
-const Order = ({ ordersArray, openFoodPrice }) => {
+const Order = ({ ordersArray }) => {
+  const subtotal = ordersArray.reduce((total, order) => {
+    return total + getPrice(order);
+  }, 0);
+
+  const tax = subtotal * 0.093;
+  const total = subtotal + tax;
   return (
     <OrderStyled>
       {ordersArray.length === 0 ? (
@@ -51,10 +58,27 @@ const Order = ({ ordersArray, openFoodPrice }) => {
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
                 <div />
-                <div>{order.price}</div>
+                <div>{FormatPrice(getPrice(order))}</div>
               </OrderItem>
             </OrderContainer>
           ))}
+          <OrderContainer>
+            <OrderItem>
+              <div />
+              <div>Sub-Total</div>
+              <div>{FormatPrice(subtotal)}</div>
+            </OrderItem>
+            <OrderItem>
+              <div />
+              <div>Tax</div>
+              <div>{FormatPrice(tax)}</div>
+            </OrderItem>
+            <OrderItem>
+              <div />
+              <div>Total</div>
+              <div>{FormatPrice(total)}</div>
+            </OrderItem>
+          </OrderContainer>
         </OrderContent>
       )}
       <DialogFooter>

@@ -66,6 +66,12 @@ const DialogBannerName = styled(FoodLabel)`
   padding: 5px 40px;
 `;
 
+export function getPrice(order) {
+  return (
+    order.quantity * order.price
+  );
+}
+
 export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName, setOrdersArray, ordersArray, openFoodPrice, setOpenFoodPrice, setQuantityValue, quantityValue }) => {
 
 
@@ -76,10 +82,11 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
     setQuantityValue(1);
   };
 
+
   const currentOrder = {
     name: openFoodName,
     quantity: quantityValue,
-    price: FormatPrice(openFoodPrice * quantityValue),
+    price: openFoodPrice,
   };
 
   const addToOrder = () => {
@@ -105,7 +112,7 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
             <ConfirmButton
               onClick={() => addToOrder()}
             >
-              Add To Order: {FormatPrice(openFoodPrice * quantityValue)}
+              Add To Order: {FormatPrice(getPrice(currentOrder))}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>
