@@ -12,6 +12,7 @@ const App = () => {
   const [openFoodName, setOpenFoodName] = useState();
   const [openFoodImg, setOpenFoodImg] = useState();
   const [ordersArray, setOrdersArray] = useState([]);
+  const [openFoodPrice, setOpenFoodPrice] = useState();
 
 
 
@@ -25,17 +26,22 @@ const App = () => {
         setOpenFoodImg={setOpenFoodImg}
         setOrdersArray={setOrdersArray}
         ordersArray={ordersArray}
+        openFoodPrice={openFoodPrice}
+        setOpenFoodPrice={setOpenFoodPrice}
       />
       <NavBar />
       <Order
         ordersArray={ordersArray}
         setOrdersArray={setOrdersArray}
+        setOpenFoodPrice={setOpenFoodPrice}
+        openFoodPrice={openFoodPrice}
       />
       <Banner />
       <div>{openFoodName}</div>
       <Menu
         setOpenFoodName={setOpenFoodName}
         setOpenFoodImg={setOpenFoodImg}
+        setOpenFoodPrice={setOpenFoodPrice}
       />
     </>
   );

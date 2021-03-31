@@ -26,9 +26,12 @@ const OrderContainer = styled.div`
 `
 const OrderItem = styled.div`
   padding: 10px 0px;
+  display: grid;
+  grid-template-columns: 20px 150px 20px 60px;
+  justify-content: space-between;
 `;
 
-const Order = ({ ordersArray }) => {
+const Order = ({ ordersArray, openFoodPrice }) => {
   return (
     <OrderStyled>
       {ordersArray.length === 0 ? (
@@ -45,7 +48,10 @@ const Order = ({ ordersArray }) => {
           {ordersArray.map((order) => (
             <OrderContainer>
               <OrderItem>
-                {order.name}
+                <div>1</div>
+                <div>{order.name}</div>
+                <div />
+                <div>{openFoodPrice}</div>
               </OrderItem>
             </OrderContainer>
           ))}

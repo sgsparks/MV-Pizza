@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import styled from 'styled-components';
-import { foods } from './data/foodData';
+import { foods, FormatPrice } from './data/foodData';
 import { Food, FoodGrid, FoodLabel } from './Styles/foodGrid';
 
 const MenuStyled = styled.div`
@@ -9,7 +9,7 @@ const MenuStyled = styled.div`
   margin: 0px 400px 50px 20px;
 `;
 
-const Menu = ({ setOpenFoodName, setOpenFoodImg }) => {
+const Menu = ({ setOpenFoodName, setOpenFoodImg, setOpenFoodPrice }) => {
   return (
     <MenuStyled>
       {Object.entries(foods).map(([sectionName, difFoods]) => (
@@ -22,10 +22,16 @@ const Menu = ({ setOpenFoodName, setOpenFoodImg }) => {
                 onClick={() => {
                   setOpenFoodName(food.name);
                   setOpenFoodImg(food.img);
+                  setOpenFoodPrice(FormatPrice(food.price));
                 }}
               >
                 <FoodLabel>
-                  {food.name}
+                  <div>
+                    {food.name}
+                  </div>
+                  <div>
+                    {FormatPrice(food.price)}
+                  </div>
                 </FoodLabel>
               </Food>
             ))}
