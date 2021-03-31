@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FoodLabel } from './Styles/foodGrid.js';
 import { Title } from './Styles/title.js'
+import QuantityInput from './QuantityInput.jsx'
+import { foods, FormatPrice } from './data/foodData';
 
 const Dialog = styled.div`
   width: 500px;
@@ -19,6 +21,7 @@ const Dialog = styled.div`
 export const DialogContent = styled.div`
   overflow: auto;
   min-height: 100px;
+  padding: 0px 40px;
 `
 export const DialogFooter = styled.div`
   box-shadow: 0px -2px 10px 0px grey;
@@ -63,14 +66,20 @@ const DialogBannerName = styled(FoodLabel)`
   padding: 5px 40px;
 `;
 
-export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName, setOrdersArray, ordersArray, openFoodPrice }) => {
+export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName, setOrdersArray, ordersArray, openFoodPrice, setOpenFoodPrice, setQuantityValue, quantityValue }) => {
+
+
   const close = () => {
     setOpenFoodName();
     setOpenFoodImg();
+    setOpenFoodPrice();
+    setQuantityValue(1);
   };
 
   const currentOrder = {
     name: openFoodName,
+    quantity: quantityValue,
+    price: FormatPrice(openFoodPrice * quantityValue),
   };
 
   const addToOrder = () => {
@@ -86,12 +95,17 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
           <DialogBanner img={openFoodImg}>
             <DialogBannerName>{openFoodName}</DialogBannerName>
           </DialogBanner>
-          <DialogContent />
+          <DialogContent>
+            <QuantityInput
+              setQuantityValue={setQuantityValue}
+              quantityValue={quantityValue}
+            />
+          </DialogContent>
           <DialogFooter>
             <ConfirmButton
               onClick={() => addToOrder()}
             >
-              Add To Order: {openFoodPrice}
+              Add To Order: {FormatPrice(openFoodPrice * quantityValue)}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>
@@ -99,3 +113,4 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
     ) : null
   );
 };
+

@@ -48,10 +48,10 @@ const Order = ({ ordersArray, openFoodPrice }) => {
           {ordersArray.map((order) => (
             <OrderContainer>
               <OrderItem>
-                <div>1</div>
+                <div>{order.quantity}</div>
                 <div>{order.name}</div>
                 <div />
-                <div>{openFoodPrice}</div>
+                <div>{order.price}</div>
               </OrderItem>
             </OrderContainer>
           ))}

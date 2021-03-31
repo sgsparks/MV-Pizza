@@ -13,7 +13,7 @@ const App = () => {
   const [openFoodImg, setOpenFoodImg] = useState();
   const [ordersArray, setOrdersArray] = useState([]);
   const [openFoodPrice, setOpenFoodPrice] = useState();
-
+  const [quantityValue, setQuantityValue] = useState(1);
 
 
   return (
@@ -28,6 +28,8 @@ const App = () => {
         ordersArray={ordersArray}
         openFoodPrice={openFoodPrice}
         setOpenFoodPrice={setOpenFoodPrice}
+        quantityValue={quantityValue}
+        setQuantityValue={setQuantityValue}
       />
       <NavBar />
       <Order

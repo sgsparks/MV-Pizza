@@ -22,7 +22,7 @@ const Menu = ({ setOpenFoodName, setOpenFoodImg, setOpenFoodPrice }) => {
                 onClick={() => {
                   setOpenFoodName(food.name);
                   setOpenFoodImg(food.img);
-                  setOpenFoodPrice(FormatPrice(food.price));
+                  setOpenFoodPrice(food.price);
                 }}
               >
                 <FoodLabel>
