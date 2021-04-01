@@ -11,7 +11,7 @@ const MenuStyled = styled.div`
 `;
 const SectionName = styled.h1`
   font-family: 'Open Sans', sans-serif;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 99, 71, .8);
   paddign: 5px;
   border-radius: 3px;
   max-width: 410px;

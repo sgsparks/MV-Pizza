@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { FormatPrice } from './data/foodData';
 import { DialogFooter, DialogContent, ConfirmButton } from './foodDialog.jsx';
@@ -8,7 +8,7 @@ const OrderStyled = styled.div`
   position: fixed;
   right: 0px;
   top: 48px;
-  width: 350px;
+  width: 400px;
   background-image: url('img/tomatoLine.jpeg');
   background-position: center;
   background-size: cover;
@@ -40,7 +40,10 @@ const DetailItem = styled.span`
   font-size: 10px;
 `;
 
-const Order = ({ ordersArray, setOrdersArray}) => {
+
+const Order = ({ ordersArray, setOrdersArray, setConfirmationBoolean, confirmationBoolean}) => {
+
+
   const deleteItem = (index) => {
     const newOrders = [...ordersArray];
     newOrders.splice(index, 1);
@@ -111,7 +114,7 @@ const Order = ({ ordersArray, setOrdersArray}) => {
       )}
       <DialogFooter>
         <ConfirmButton
-          onClick={() => setOrdersArray([])}
+          onClick={() => setConfirmationBoolean(!confirmationBoolean)}
         >
           Checkout
         </ConfirmButton>

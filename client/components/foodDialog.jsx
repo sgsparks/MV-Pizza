@@ -20,6 +20,16 @@ const Dialog = styled.div`
   border-radius: 8px;
 `;
 
+const DialogShadow = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 4;
+`;
+
 export const DialogContent = styled.div`
   overflow: auto;
   min-height: 100px;
@@ -44,17 +54,16 @@ export const ConfirmButton = styled.div`
   cursor: pointer;
   background-color: tomato;
   font-family: 'Open Sans', sans-serif;
+  transition-property: box-shadow margin-top filter;
+  transition-duration: .1s;
+  box-shadow: 0px 0px 2px 0px grey;
+  &:hover {
+  cursor: pointer;
+  filter: contrast(100%);
+  border: 3px solid rgba(0, 0, 0, .75);
 `;
 
-const DialogShadow = styled.div`
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0px;
-  background-color: black;
-  opacity: 0.7;
-  z-index: 4;
-`;
+
 
 const DialogBanner = styled.div`
   min-height: 200px;

@@ -7,7 +7,8 @@ import { Banner } from './Styles/banner.js';
 import { GlobalStyle } from './Styles/globalStyle.js';
 import { FoodDialog } from './foodDialog.jsx';
 import Order from './Order.jsx';
-
+import Confirmation from './Confirmation.jsx'
+import OrderPlaced from './OrderPlaced.jsx';
 
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
   const [openFoodSection, setOpenFoodSection] = useState();
   const [toppingsArray, setToppingsArray] = useState([]);
   const [sectionNameRender, setSectionNameRender] = useState();
+  const [confirmationBoolean, setConfirmationBoolean] = useState(false);
+  const [orderPlacedboolean, setOrderPlacedBoolean] = useState(false);
 
   const getPrice = (order) => {
     return (
@@ -46,6 +49,17 @@ const App = () => {
         setOpenFoodSection={setOpenFoodSection}
         getPrice={getPrice}
       />
+      <Confirmation
+        ordersArray={ordersArray}
+        setOrdersArray={setOrdersArray}
+        setOpenFoodPrice={setOpenFoodPrice}
+        openFoodPrice={openFoodPrice}
+        toppingsArray={toppingsArray}
+        confirmationBoolean={confirmationBoolean}
+        setConfirmationBoolean={setConfirmationBoolean}
+        orderPlacedboolean={orderPlacedboolean}
+        setOrderPlacedBoolean={setOrderPlacedBoolean}
+      />
       <NavBar />
       <Order
         ordersArray={ordersArray}
@@ -53,6 +67,12 @@ const App = () => {
         setOpenFoodPrice={setOpenFoodPrice}
         openFoodPrice={openFoodPrice}
         toppingsArray={toppingsArray}
+        confirmationBoolean={confirmationBoolean}
+        setConfirmationBoolean={setConfirmationBoolean}
+      />
+      <OrderPlaced
+        orderPlacedboolean={orderPlacedboolean}
+        setOrderPlacedBoolean={setOrderPlacedBoolean}
       />
       <Banner />
       <div>{openFoodName}</div>

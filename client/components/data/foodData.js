@@ -9,7 +9,7 @@ export const toppingsList = [
   'Sausage',
   'Onions',
   'Peppers',
-  'Pineapple',
+  '🍍Pineapple',
   'Ham',
   'Spinach',
   'Artichokes',
@@ -18,18 +18,17 @@ export const toppingsList = [
 ];
 
 export const foodItems = [
-
-  {
-    name: 'Caprese Sandwich',
-    img: '/img/caprese-sand.jpeg',
-    section: 'Sandwiches',
-    price: 6,
-  },
   {
     name: 'Olive Pizza',
     img: '/img/olive-arugula-pizza.jpeg',
     section: 'Pizza',
     price: 12,
+  },
+  {
+    name: 'Caprese Sandwich',
+    img: '/img/caprese-sand.jpeg',
+    section: 'Sandwiches',
+    price: 6,
   },
   {
     name: 'Pepperoni Pizza',
