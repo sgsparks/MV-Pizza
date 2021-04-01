@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import styled from 'styled-components';
 import { FoodLabel } from './Styles/foodGrid.js';
-import { Title } from './Styles/title.js'
 import QuantityInput from './QuantityInput.jsx'
-import { foods, FormatPrice } from './data/foodData';
+import { FormatPrice } from './data/foodData.js';
+import Toppings from './Toppings.jsx';
 
 const Dialog = styled.div`
   width: 500px;
@@ -16,21 +17,23 @@ const Dialog = styled.div`
   left: calc(50% - 250px);
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
 `;
 
 export const DialogContent = styled.div`
   overflow: auto;
   min-height: 100px;
   padding: 0px 40px;
-`
+  padding-bottom: 80px;
+`;
 export const DialogFooter = styled.div`
   box-shadow: 0px -2px 10px 0px grey;
   height: 60px;
   display: flex;
   justify-content: center;
-`
+`;
 
-export const ConfirmButton = styled(Title)`
+export const ConfirmButton = styled.div`
   margin: 10px;
   color: white;
   height: 20px;
@@ -40,7 +43,8 @@ export const ConfirmButton = styled(Title)`
   width: 200px;
   cursor: pointer;
   background-color: tomato;
-`
+  font-family: 'Open Sans', sans-serif;
+`;
 
 const DialogShadow = styled.div`
   position: fixed;
@@ -61,38 +65,54 @@ const DialogBanner = styled.div`
 `;
 
 const DialogBannerName = styled(FoodLabel)`
-  top: 100px;
+  top: 40px;
   font-size: 30px;
-  padding: 5px 40px;
+  padding: 0px, 2px 40px;
+  margin-left: 30px;
+  width: fit-content;
 `;
 
-export function getPrice(order) {
-  return (
-    order.quantity * order.price
-  );
-}
-
-export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenFoodName, setOrdersArray, ordersArray, openFoodPrice, setOpenFoodPrice, setQuantityValue, quantityValue }) => {
 
 
+export const FoodDialog = ({
+  openFoodImg,
+  openFoodName,
+  setOpenFoodImg,
+  setOpenFoodName,
+  setOrdersArray,
+  ordersArray,
+  openFoodPrice,
+  setOpenFoodPrice,
+  setQuantityValue,
+  quantityValue,
+  openFoodSection,
+  toppingsArray,
+  setToppingsArray,
+  setOpenFoodSection,
+  getPrice,
+}) => {
   const close = () => {
     setOpenFoodName();
     setOpenFoodImg();
     setOpenFoodPrice();
     setQuantityValue(1);
+    setToppingsArray([]);
+    setOpenFoodSection();
   };
-
 
   const currentOrder = {
     name: openFoodName,
     quantity: quantityValue,
     price: openFoodPrice,
+    toppings: toppingsArray,
   };
 
   const addToOrder = () => {
     setOrdersArray([...ordersArray, currentOrder]);
     close();
   };
+
+
 
   return (
     openFoodImg ? (
@@ -107,12 +127,24 @@ export const FoodDialog = ({ openFoodImg, openFoodName, setOpenFoodImg, setOpenF
               setQuantityValue={setQuantityValue}
               quantityValue={quantityValue}
             />
+
+            {openFoodSection === 'Pizza' ? (
+              <>
+                <h4>Choose Your Toppings: </h4>
+                <Toppings
+                  setToppingsArray={setToppingsArray}
+                  toppingsArray={toppingsArray}
+                />
+              </>
+            ) : null }
           </DialogContent>
           <DialogFooter>
             <ConfirmButton
               onClick={() => addToOrder()}
             >
-              Add To Order: {FormatPrice(getPrice(currentOrder))}
+              Add To Order:
+              {' '}
+              {FormatPrice(getPrice(currentOrder))}
             </ConfirmButton>
           </DialogFooter>
         </Dialog>

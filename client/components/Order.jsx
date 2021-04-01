@@ -2,19 +2,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormatPrice } from './data/foodData';
-import { DialogFooter, DialogContent, ConfirmButton, getPrice } from './foodDialog.jsx';
+import { DialogFooter, DialogContent, ConfirmButton } from './foodDialog.jsx';
 
 const OrderStyled = styled.div`
   position: fixed;
   right: 0px;
   top: 48px;
-  width: 340px;
-  background-color: white;
+  width: 350px;
+  background-image: url('img/tomatoLine.jpeg');
+  background-position: center;
+  background-size: cover;
   height: calc(100% - 48px);
   z-index: 10;
   box-shadow: 4px 0px 5px 4px grey;
   display: flex;
   flex-direction: column;
+  border-left: 3px solid rgba(0, 0, 0, .75);
 `;
 const OrderContent = styled(DialogContent)`
   padding: 20px;
@@ -32,7 +35,22 @@ const OrderItem = styled.div`
   justify-content: space-between;
 `;
 
-const Order = ({ ordersArray }) => {
+const DetailItem = styled.span`
+  color: dark-gray;
+  font-size: 10px;
+`;
+
+const Order = ({ ordersArray, setOrdersArray}) => {
+  const deleteItem = (index) => {
+    const newOrders = [...ordersArray];
+    newOrders.splice(index, 1);
+    setOrdersArray(newOrders)
+  }
+  const getPrice = (order) => {
+    return (
+      order.quantity * (order.price + order.toppings.length)
+    );
+  };
   const subtotal = ordersArray.reduce((total, order) => {
     return total + getPrice(order);
   }, 0);
@@ -52,14 +70,24 @@ const Order = ({ ordersArray }) => {
             Your order:
           </OrderContainer>
           {' '}
-          {ordersArray.map((order) => (
+          {ordersArray.map((order, index) => (
             <OrderContainer>
               <OrderItem>
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
-                <div />
+                <div
+                  style={{cursor: 'pointer'}}
+                  onClick={() => deleteItem(index)}>
+                  🗑️
+                </div>
                 <div>{FormatPrice(getPrice(order))}</div>
               </OrderItem>
+              {order.toppings.map((topping) => (
+                <DetailItem>
+                  {topping}
+                  {' '}
+                </DetailItem>
+              ))}
             </OrderContainer>
           ))}
           <OrderContainer>
@@ -82,7 +110,9 @@ const Order = ({ ordersArray }) => {
         </OrderContent>
       )}
       <DialogFooter>
-        <ConfirmButton>
+        <ConfirmButton
+          onClick={() => setOrdersArray([])}
+        >
           Checkout
         </ConfirmButton>
       </DialogFooter>

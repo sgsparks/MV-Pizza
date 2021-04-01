@@ -2,19 +2,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import { foods, FormatPrice } from './data/foodData';
-import { Food, FoodGrid, FoodLabel } from './Styles/foodGrid';
+import { Food, FoodGrid, FoodLabel, FoodLabelPrice } from './Styles/foodGrid';
 
 const MenuStyled = styled.div`
   height: 1000px;
+  padding-left: 20px;
   margin: 0px 400px 50px 20px;
 `;
+const SectionName = styled.h1`
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(255, 255, 255, .8);
+  paddign: 5px;
+  border-radius: 3px;
+  max-width: 410px;
+  text-align: center;
 
-const Menu = ({ setOpenFoodName, setOpenFoodImg, setOpenFoodPrice }) => {
+`
+
+const Menu = ({ setOpenFoodName, setOpenFoodImg, setOpenFoodPrice,setOpenFoodSection, sectionNameRender, setSectionNameRender }) => {
   return (
     <MenuStyled>
       {Object.entries(foods).map(([sectionName, difFoods]) => (
         <>
-          <h1>{sectionName}</h1>
+          <SectionName onClick={() => setSectionNameRender(sectionName)}>{sectionName}</SectionName>
           <FoodGrid>
             {difFoods.map((food) => (
               <Food
@@ -23,15 +33,16 @@ const Menu = ({ setOpenFoodName, setOpenFoodImg, setOpenFoodPrice }) => {
                   setOpenFoodName(food.name);
                   setOpenFoodImg(food.img);
                   setOpenFoodPrice(food.price);
+                  setOpenFoodSection(sectionName);
                 }}
               >
                 <FoodLabel>
                   <div>
                     {food.name}
                   </div>
-                  <div>
+                  <FoodLabelPrice>
                     {FormatPrice(food.price)}
-                  </div>
+                  </FoodLabelPrice>
                 </FoodLabel>
               </Food>
             ))}

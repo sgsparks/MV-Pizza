@@ -1,0 +1,6 @@
+body {
+  background-image: url("img/oven.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

@@ -1,15 +1,23 @@
 import styled from 'styled-components';
-import { Title } from './title';
 
 export const FoodGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 `;
 
-export const FoodLabel = styled(Title)`
+export const FoodLabel = styled.div`
   position: absolute;
+  font-family: 'Open Sans', sans-serif;
   background-color: rgba(255, 255, 255, .8);
+  paddign: 5px;
+  border-radius: 3px;
+`
+export const FoodLabelPrice = styled.div`
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(255, 255, 255, .8);
+  margin-top: 45px;
   paddign: 5px;
   border-radius: 3px;
 `
@@ -17,13 +25,16 @@ export const FoodLabel = styled(Title)`
 export const Food = styled.div`
   height: 100px;
   padding: 10px;
+  position: relative;
   font-size: 20px;
+  max-width: 400px;
   background-image: ${({ img }) => `url(${img});`}
   background-position: center;
   background-size: cover;
   filter: contrast(75%);
   border-radius: 7px;
   margin-top: 5px;
+  border: 3px solid rgba(0, 0, 0, .75);
   transition-property: box-shadow margin-top filter;
   transition-duration: .1s;
   box-shadow: 0px 0px 2px 0px grey;
@@ -33,4 +44,5 @@ export const Food = styled.div`
   margin-top: 0px;
   margin-bottom: 5px;
   box-shadow: 0px 5px 10px 0px grey;
+
 `;
