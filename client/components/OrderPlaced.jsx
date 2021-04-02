@@ -2,13 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-const Dialog = styled.div`
-  width: 300px;
-  background-color: white;
-
-`;
-
  const OrderPlacedButton = styled.div`
   margin: 10px;
   color: white;
@@ -43,7 +36,7 @@ const DialogShadow = styled.div`
   width: 100%;
   top: 0px;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: 4;
 `;
 

@@ -22,6 +22,7 @@ const OrderStyled = styled.div`
 const OrderContent = styled(DialogContent)`
   padding: 20px;
   height: 100%;
+  text-align: center;
 `;
 
 const OrderContainer = styled.div`
@@ -37,7 +38,7 @@ const OrderItem = styled.div`
 
 const DetailItem = styled.span`
   color: dark-gray;
-  font-size: 10px;
+  font-size: 15px;
 `;
 
 

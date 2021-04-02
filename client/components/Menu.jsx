@@ -6,15 +6,15 @@ import { Food, FoodGrid, FoodLabel, FoodLabelPrice } from './Styles/foodGrid';
 
 const MenuStyled = styled.div`
   height: 1000px;
-  padding-left: 20px;
+  padding-left: 40px;
   margin: 0px 400px 50px 20px;
 `;
 const SectionName = styled.h1`
   font-family: 'Open Sans', sans-serif;
   background-color: rgba(255, 99, 71, .8);
-  paddign: 5px;
+  padding: 5px, 5px, 5px, 50px;
   border-radius: 3px;
-  max-width: 410px;
+  max-width: 520px;
   text-align: center;
 
 `

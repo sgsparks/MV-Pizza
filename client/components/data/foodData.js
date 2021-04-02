@@ -19,7 +19,7 @@ export const toppingsList = [
 
 export const foodItems = [
   {
-    name: 'Olive Pizza',
+    name: 'Olive and Arugula',
     img: '/img/olive-arugula-pizza.jpeg',
     section: 'Pizza',
     price: 12,
@@ -31,19 +31,19 @@ export const foodItems = [
     price: 6,
   },
   {
-    name: 'Pepperoni Pizza',
+    name: 'Pepperoni',
     img: '/img/peperoni.jpeg',
     section: 'Pizza',
     price: 14,
   },
   {
-    name: 'Strawberry Basil Pizza',
+    name: 'Strawberry and Pesto',
     img: '/img/Straw-Basil.jpeg',
     section: 'Pizza',
     price: 12,
   },
   {
-    name: 'Tomato Basil Pizza',
+    name: 'Tomato Basil',
     img: '/img/tomato-basil-pizza.jpeg',
     section: 'Pizza',
     price: 14,

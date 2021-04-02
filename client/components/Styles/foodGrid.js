@@ -10,15 +10,15 @@ export const FoodLabel = styled.div`
   position: absolute;
   font-family: 'Open Sans', sans-serif;
   background-color: rgba(255, 255, 255, .8);
-  paddign: 5px;
+  padding: 5px;
   border-radius: 3px;
 `
 export const FoodLabelPrice = styled.div`
   position: absolute;
   font-family: 'Open Sans', sans-serif;
   background-color: rgba(255, 255, 255, .8);
-  margin-top: 45px;
-  paddign: 5px;
+  margin-top: 35px;
+  padding: 5px;
   border-radius: 3px;
 `
 
@@ -27,7 +27,7 @@ export const Food = styled.div`
   padding: 10px;
   position: relative;
   font-size: 20px;
-  max-width: 400px;
+  max-width: 500px;
   background-image: ${({ img }) => `url(${img});`}
   background-position: center;
   background-size: cover;
